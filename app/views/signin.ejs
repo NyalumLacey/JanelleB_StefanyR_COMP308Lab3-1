@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Use the 'title' property to render a page title  -->
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="css/loginstyle.css" />
+    <link rel="stylesheet" type="text/css" href="css/display.css" />
+
+</head>
+<body>
+  	<!-- Display flash messages  -->
+	<% for(var i in messages) { %>
+	   <div class="flash"><%= messages[i] %></div>
+	<% } %>
+
+	<!-- Render the signin form  -->
+    <form action="/signin" method="post">
+        <div class="outer_container">
+            <h2> Sign In as User</h2>
+
+            <div class="container">
+                <label>Username: </label>
+                <input type="text" class="fields" name="username" />
+            </div>
+            <div class="container">
+                <label>Password:</label>
+                <input type="password" class="fields" name="password" />
+            </div>
+            <div class="container">
+                <button type="submit" class="form-field-no-caption">Sign In</button>
+            </div>
+        </div>
+        <!-- Render the OAuth authentication links  -->
+        <div class="container">
+            <table>
+                <tr>
+                    <!-- Render the OAuth authentication links  -->
+                    <td><a href="/oauth/facebook">Sign in with Facebook</a></td>
+                </tr>
+                <tr>
+                    <td><a href="/oauth/twitter">Sign in with Twitter</a></td>
+                </tr>
+                <tr>
+                    <td><a href="/oauth/google">Sign in with Google</a></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+
+</body>
+</html>
