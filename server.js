@@ -1,5 +1,5 @@
 // Set the 'NODE_ENV' variable
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+process.env.NODE_ENV = process.env.NODE_ENV || 'test';
 
 // Load the module dependencies
 const configureMongoose = require('./config/mongoose');
